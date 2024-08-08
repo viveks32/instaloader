@@ -1162,6 +1162,11 @@ class Profile:
         .. versionadded:: 4.9.3"""
         return self._metadata("profile_pic_url_hd")
 
+    @property
+    def bio_links(self) -> List[str]:
+        """list of external links given in the bio"""
+        return [links['url'] for links in self._metadata('bio_links')]
+    
     def get_profile_pic_url(self) -> str:
         """.. deprecated:: 4.0.3
 
